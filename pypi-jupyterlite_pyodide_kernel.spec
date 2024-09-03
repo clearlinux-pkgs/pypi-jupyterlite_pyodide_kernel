@@ -6,15 +6,16 @@
 # autospec commit: f35655a
 #
 Name     : pypi-jupyterlite_pyodide_kernel
-Version  : 0.4.1
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/14/b5/3d20c507091036ed828cc1754ee86baf0645ab63bb5a0c589511866b00e5/jupyterlite_pyodide_kernel-0.4.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/14/b5/3d20c507091036ed828cc1754ee86baf0645ab63bb5a0c589511866b00e5/jupyterlite_pyodide_kernel-0.4.1.tar.gz
+Version  : 0.4.2
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/58/1d/5c742ecc55e78bf7968cbae1038c59127da7a8144f17f49f3423e6f858bf/jupyterlite_pyodide_kernel-0.4.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/58/1d/5c742ecc55e78bf7968cbae1038c59127da7a8144f17f49f3423e6f858bf/jupyterlite_pyodide_kernel-0.4.2.tar.gz
 Summary  : Python kernel for JupyterLite powered by Pyodide
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: pypi-jupyterlite_pyodide_kernel-bin = %{version}-%{release}
 Requires: pypi-jupyterlite_pyodide_kernel-data = %{version}-%{release}
+Requires: pypi-jupyterlite_pyodide_kernel-license = %{version}-%{release}
 Requires: pypi-jupyterlite_pyodide_kernel-python = %{version}-%{release}
 Requires: pypi-jupyterlite_pyodide_kernel-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -33,6 +34,7 @@ BuildRequires : pypi(jupyterlab)
 Summary: bin components for the pypi-jupyterlite_pyodide_kernel package.
 Group: Binaries
 Requires: pypi-jupyterlite_pyodide_kernel-data = %{version}-%{release}
+Requires: pypi-jupyterlite_pyodide_kernel-license = %{version}-%{release}
 
 %description bin
 bin components for the pypi-jupyterlite_pyodide_kernel package.
@@ -44,6 +46,14 @@ Group: Data
 
 %description data
 data components for the pypi-jupyterlite_pyodide_kernel package.
+
+
+%package license
+Summary: license components for the pypi-jupyterlite_pyodide_kernel package.
+Group: Default
+
+%description license
+license components for the pypi-jupyterlite_pyodide_kernel package.
 
 
 %package python
@@ -68,15 +78,15 @@ python3 components for the pypi-jupyterlite_pyodide_kernel package.
 
 
 %prep
-%setup -q -n jupyterlite_pyodide_kernel-0.4.1
-cd %{_builddir}/jupyterlite_pyodide_kernel-0.4.1
+%setup -q -n jupyterlite_pyodide_kernel-0.4.2
+cd %{_builddir}/jupyterlite_pyodide_kernel-0.4.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1723561855
+export SOURCE_DATE_EPOCH=1725373068
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,6 +121,8 @@ ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-jupyterlite_pyodide_kernel
+cp %{_builddir}/jupyterlite_pyodide_kernel-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-jupyterlite_pyodide_kernel/489433bbf55cd22907d9a248dc6225e426144563 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -127,11 +139,8 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/install.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/package.json
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.b84bb3de4c12e59b569c.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.b84bb3de4c12e59b569c.js.map
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/248.e5013c38fd241ed9d509.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/248.e5013c38fd241ed9d509.js.LICENSE.txt
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/248.e5013c38fd241ed9d509.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.66d42b47fe2700eb655c.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.66d42b47fe2700eb655c.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js.LICENSE.txt
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js.map
@@ -141,18 +150,25 @@ echo ----[ mark ]----
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.5d1ded170db5d0c1f7b2.js
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.5d1ded170db5d0c1f7b2.js.LICENSE.txt
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.5d1ded170db5d0c1f7b2.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/773.e6ccd11b0978b9278f58.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/773.e6ccd11b0978b9278f58.js.LICENSE.txt
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/773.e6ccd11b0978b9278f58.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/all.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/ipykernel-6.9.2-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/piplite-0.4.1-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/pyodide_kernel-0.4.1-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-3.6.6-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-4.0.11-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.e96be077d96e844d0c72.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.e96be077d96e844d0c72.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/piplite-0.4.2-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/pyodide_kernel-0.4.2-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-3.6.999-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-4.0.999-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.26d08a103ba745fd5c80.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.26d08a103ba745fd5c80.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/schema/kernel.v0.schema.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/schema/piplite.v0.schema.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/style.js
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/third-party-licenses.json
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-jupyterlite_pyodide_kernel/489433bbf55cd22907d9a248dc6225e426144563
 
 %files python
 %defattr(-,root,root,-)
