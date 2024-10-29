@@ -7,7 +7,7 @@
 #
 Name     : pypi-jupyterlite_pyodide_kernel
 Version  : 0.4.3
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/af/dd/ab389ba96668cc7bb826fd0bc08fc335bbc7d1906c3ab6bda761786fce5b/jupyterlite_pyodide_kernel-0.4.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/af/dd/ab389ba96668cc7bb826fd0bc08fc335bbc7d1906c3ab6bda761786fce5b/jupyterlite_pyodide_kernel-0.4.3.tar.gz
 Summary  : Python kernel for JupyterLite powered by Pyodide
@@ -86,7 +86,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1729520974
+export SOURCE_DATE_EPOCH=1730208352
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
