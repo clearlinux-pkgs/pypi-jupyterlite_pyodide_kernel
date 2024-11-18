@@ -1,5 +1,5 @@
 PKG_NAME := pypi-jupyterlite_pyodide_kernel
-URL = https://files.pythonhosted.org/packages/af/dd/ab389ba96668cc7bb826fd0bc08fc335bbc7d1906c3ab6bda761786fce5b/jupyterlite_pyodide_kernel-0.4.3.tar.gz
+URL = https://files.pythonhosted.org/packages/7f/f6/f23f0760d2a544f3690a04c7cae35f8366a0539e8fcb60c44101a677470a/jupyterlite_pyodide_kernel-0.4.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
