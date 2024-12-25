@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : pypi-jupyterlite_pyodide_kernel
-Version  : 0.4.5
-Release  : 6
-URL      : https://files.pythonhosted.org/packages/49/f6/91fed30169dbef3470c65465ffc938e9181d4f8b13254b9b773e9aee48c4/jupyterlite_pyodide_kernel-0.4.5.tar.gz
-Source0  : https://files.pythonhosted.org/packages/49/f6/91fed30169dbef3470c65465ffc938e9181d4f8b13254b9b773e9aee48c4/jupyterlite_pyodide_kernel-0.4.5.tar.gz
+Version  : 0.4.6
+Release  : 7
+URL      : https://files.pythonhosted.org/packages/c6/9a/d1b05a52d6f8cc1144e03841bafb7163c361d064a32b52cc39da3dd95dfe/jupyterlite_pyodide_kernel-0.4.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c6/9a/d1b05a52d6f8cc1144e03841bafb7163c361d064a32b52cc39da3dd95dfe/jupyterlite_pyodide_kernel-0.4.6.tar.gz
 Summary  : Python kernel for JupyterLite powered by Pyodide
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -78,15 +78,15 @@ python3 components for the pypi-jupyterlite_pyodide_kernel package.
 
 
 %prep
-%setup -q -n jupyterlite_pyodide_kernel-0.4.5
-cd %{_builddir}/jupyterlite_pyodide_kernel-0.4.5
+%setup -q -n jupyterlite_pyodide_kernel-0.4.6
+cd %{_builddir}/jupyterlite_pyodide_kernel-0.4.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1733819485
+export SOURCE_DATE_EPOCH=1735096615
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -140,28 +140,28 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/install.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/package.json
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.9feeb76655c460bb662b.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.9feeb76655c460bb662b.js.map
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js.LICENSE.txt
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.0bb9abc93cc92244ff25.js.map
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.199d03f2b99f4594a889.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.199d03f2b99f4594a889.js.LICENSE.txt
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.199d03f2b99f4594a889.js.map
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/378.d1d840acae39794fdecd.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/378.d1d840acae39794fdecd.js.LICENSE.txt
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/378.d1d840acae39794fdecd.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.801d2d10aadfd6eac5fd.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/154.801d2d10aadfd6eac5fd.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.fed478b20183b113f417.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.fed478b20183b113f417.js.LICENSE.txt
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/304.fed478b20183b113f417.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.21686a312156a4633627.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.21686a312156a4633627.js.LICENSE.txt
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/352.21686a312156a4633627.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.52308b6425da4e3d805d.js
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.52308b6425da4e3d805d.js.LICENSE.txt
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/620.52308b6425da4e3d805d.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/888.55ead8db7cb0653b0108.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/888.55ead8db7cb0653b0108.js.LICENSE.txt
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/888.55ead8db7cb0653b0108.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/all.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/ipykernel-6.9.2-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/piplite-0.4.5-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/pyodide_kernel-0.4.5-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/piplite-0.4.6-py3-none-any.whl
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/pyodide_kernel-0.4.6-py3-none-any.whl
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-3.6.999-py3-none-any.whl
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-4.0.999-py3-none-any.whl
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.d6704cdc807d45819742.js
-/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.d6704cdc807d45819742.js.map
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.731d4191557fd12b02be.js
+/usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/remoteEntry.731d4191557fd12b02be.js.map
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/schema/kernel.v0.schema.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/schema/piplite.v0.schema.json
 /usr/share/jupyter/labextensions/@jupyterlite/pyodide-kernel-extension/static/style.js
